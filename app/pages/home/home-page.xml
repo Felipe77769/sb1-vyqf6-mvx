@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="MVX Bank - Home" class="action-bar" />
+    
+    <ScrollView>
+        <StackLayout class="p-20">
+            <Label text="Bem-vindo ao MVX Bank" class="h1" />
+            
+            <GridLayout rows="auto" columns="*, *" class="m-y-20">
+                <StackLayout col="0" class="balance-card">
+                    <Label text="Saldo" class="text-center" />
+                    <Label text="{{ balance }}" class="h2 text-center" />
+                </StackLayout>
+                <StackLayout col="1" class="balance-card">
+                    <Label text="Pix" class="text-center" />
+                    <Label text="{{ pixBalance }}" class="h2 text-center" />
+                </StackLayout>
+            </GridLayout>
+            
+            <GridLayout rows="auto" columns="*, *, *" class="actions-grid">
+                <Button col="0" text="Pix" tap="{{ onPixTap }}" class="action-button" />
+                <Button col="1" text="Pagar" tap="{{ onPayTap }}" class="action-button" />
+                <Button col="2" text="Transferir" tap="{{ onTransferTap }}" class="action-button" />
+            </GridLayout>
+            
+            <Label text="Últimas transações" class="h2 m-t-20" />
+            <ListView items="{{ transactions }}" class="list-group">
+                <ListView.itemTemplate>
+                    <GridLayout columns="*, auto" class="list-group-item">
+                        <Label col="0" text="{{ description }}" />
+                        <Label col="1" text="{{ amount }}" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>

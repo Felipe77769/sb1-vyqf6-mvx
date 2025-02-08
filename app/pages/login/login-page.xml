@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="MVX Bank" class="action-bar" />
+    
+    <StackLayout class="p-20">
+        <Image src="~/images/logo.png" class="logo" />
+        <Label text="MVX Bank" class="h1 text-center" />
+        <Label text="Seu banco digital" class="h2 text-center" />
+        
+        <TextField hint="Email" keyboardType="email" text="{{ email }}" class="input" />
+        <TextField hint="Senha" secure="true" text="{{ password }}" class="input" />
+        
+        <Button text="Entrar" tap="{{ onLoginTap }}" class="btn btn-primary" />
+        <Button text="Criar Conta" tap="{{ onRegisterTap }}" class="btn btn-outline" />
+    </StackLayout>
+</Page>
